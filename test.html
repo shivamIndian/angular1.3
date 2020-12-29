@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+    <script src="service.js"></script>
+    <script src="ExampleOneController.js"></script>
+    <script src="ExampleTwoController.js"></script>
+    <script src="app.js"></script>
+
+</head>
+<body ng-app="myApp">
+    <div ng-controller="ExampleOneController">
+      <h2>
+    ExampleOneController
+    </h2>
+      <div ng-repeat="n in news">
+        <textarea ng-model="n.theme"></textarea>
+      </div>
+    </div>
+    <div ng-controller="ExampleTwoController">
+      <h2>
+    ExampleTwoController
+    </h2>
+    <div ng-repeat="n in news">
+        <div>{{n.theme}}</div>
+      </div>
+    </div>
+  </body>
+  
+</html>

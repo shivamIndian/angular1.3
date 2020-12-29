@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+</head>
+<body>
+    <div ng-app="myApp">
+
+        <form name="myForm">
+            First Name: <input name="firstname" type="text" ng-model="firstname" required /><br>
+            Last Name: <input name="lastname" type="text" ng-model="lastname" required /><br>
+            Email: <input name="email" type="email" ng-model="email" required /><br>
+
+            <button ng-disabled="myForm.$invalid || myForm.$pending">Save</button>
+          </form>
+      
+    </div>
+</body>
+</html>

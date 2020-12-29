@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="script.js"></script>  
+</head>
+<body ng-app="ngRepeat">
+    <div ng-controller="repeatController">
+    <table>
+          <thead>
+               <tr>
+                <th>Name</th>
+                <th>Address</th> 
+                <th>status</th> 
+                
+              </tr>    
+          </thead>    
+           <tbody>
+               <tr ng-repeat="emp in emps">
+                  <td>{{emp.name}}</td>
+                  <td>{{emp.address}}</td>
+                  <td>{{emp.status}}</td>
+             </tr>     
+          </tbody>   
+    </table>
+</body>
+</html>

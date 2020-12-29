@@ -1,0 +1,25 @@
+//Two way Binding
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="script.js"></script>  
+    <title>Document</title>
+</head>
+<body ng-app="AppFirst">
+    <div ng-controller="FirstController">
+          <table>
+            <td><input type="text" ng-model="msg.name"></td><br>
+            <td><input type="text" ng-model="msg.address"></td><br>
+          </table>
+        
+          <h1>Name: {{msg.name}}</h1>
+          <h2>Address: {{msg.address}}</h2>
+
+    </div>
+</body>
+</html>

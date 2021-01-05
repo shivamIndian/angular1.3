@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<body ng-app="searchFilter">
+    <div ng-controller="searchController">
+       Serach: <input type="text" placeholder="Search here" ng-model="SerachText.name">
+    <table>
+        <thead>
+             <tr>
+              <th>Name</th>
+              <th>Address</th> 
+              <th>status</th> 
+              
+            </tr>    
+        </thead>    
+         <tbody>
+             <tr ng-repeat="emp in emps | filter: searchText.name">
+                <td>{{emp.name}}</td>
+                <td>{{emp.address}}</td>
+                <td>{{emp.status}}</td>
+           </tr>     
+        </tbody>   
+       </table>
+       </div>  
+    </body>
+</html>

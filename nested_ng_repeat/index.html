@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="script.js"></script> 
+</head>
+<body ng-app="nestedApp">
+    <div ng-controller="nestedController">
+         <ul>
+             <li ng-repeat="country in countries">
+                 {{country.name}}
+                 <ul>
+                      <li ng-repeat="city in country.cities">
+                          {{city.name}}
+                        </li>     
+                </ul>      
+            </li>
+         </ul>
+    </div>
+</body>
+</html>

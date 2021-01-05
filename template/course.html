@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="helloworld.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.29/angular-ui-router.js"></script>
+    <title>Document</title>
+</head>
+<body ng-app="helloworld">
+    <div ng-controller="CourseController">
+    <h1>Courses we are not  offer</h1>
+<ul>
+    <li ng-repeat="course in courses">
+        {{course.name}}
+    </li>
+
+</ul>
+</div>
+</body>
+</html>

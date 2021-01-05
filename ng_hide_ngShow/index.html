@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="script.js"></script> 
+    <title>Document</title>
+</head>
+<body ng-app="hideShowApp">
+    <div ng-controller="hideShowController">
+        
+        <input type="checkbox" ng-model="hideName">Hide Name
+        <br/><br/>
+        <table>
+                <thead>
+                     <tr>
+                     <th ng-hide="hideName">Name:</th>
+                     <th>Class:</th>
+                     <th>City:</th>
+                     </tr>
+                </thead>  
+                 <tbody>
+                        <tr ng-repeat="std in stds">
+                           <td ng-hide="hideName">{{std.name}}</td>
+                           <td>{{std.class}}</td>
+                           <td>{{std.city}}</td>
+                          
+                        </tr>
+                </tbody>
+          </table>
+    
+    </div>
+    
+</body>
+</html>

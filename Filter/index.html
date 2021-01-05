@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="script.js"></script> 
+</head>
+<body ng-app="filterApp">
+    <div ng-controller="filterController">
+        Rows to display: <input type="number" step="1" min="0" max="5" ng-model="rowLimit">
+        <table>
+             <thead>
+                   <tr>
+                   <th>Name</th>
+                   <th>Date Of Birth</th>
+                   <th>Gender</th>
+                   <th>Salary(Number Filter)</th>
+                   <th>Salary(Currency Filter)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                      <tr ng-repeat="emp in emps | limitTo:rowLimit ">
+                        <td>{{emp.name | uppercase}}</td> 
+                        <td>{{emp.DOB }}  </td> 
+                        <td>{{emp.Gender | lowercase }}</td> 
+                        <td>{{emp.salary | number  }}</td> 
+                        <td>{{emp.salaryc | currency }}</td>   
+                     </tr>
+                </tbody>
+            </table>
+    </div>
+</body>
+</html>

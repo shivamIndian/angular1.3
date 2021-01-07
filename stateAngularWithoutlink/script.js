@@ -1,6 +1,6 @@
-app = angular.module('myApp',['ui.router'])
+app = angular.module('myApp',['ui.router',])
 
-app.config(['$stateProvider',function($stateProvider){
+app.config(['$stateProvider',function($stateProvider, $stateParams){
   $stateProvider
     .state('main',{
       url: '/',
@@ -9,17 +9,31 @@ app.config(['$stateProvider',function($stateProvider){
     })
     .state('test',{
       url: '/test',
-      templateUrl:"test.html",
+      templateUrl:"test.html", 
+      controller:'TestController',
+      params: {
+        user: ''
+      }
     })
     
   }]);
-app.controller('MainCtrl', ['$scope', '$http', '$state'
-  ,function($scope, $http, $state){
-    
-    $scope.send = function(){
-       $state.go("test");
-          }
-  }]);  
-app.config(['$urlRouterProvider',function($urlRouterProvider){
-    $urlRouterProvider.otherwise('/');
-  }]);
+
+  
+  
+  
+ 
+  app.controller('MainCtrl', function($scope, $state) {
+    $scope.user="";
+    $scope.squarer = function(){
+      $state.go("test", {user: $scope.user});
+      
+    };
+  });
+  app.controller('TestController', function($scope, $stateParams) {
+    console.log($stateParams);
+    $scope.name = $stateParams.user;
+  });
+  
+  // app.config(['$urlRouterProvider',function($urlRouterProvider){
+  //   $urlRouterProvider.otherwise('/');
+  // }]);

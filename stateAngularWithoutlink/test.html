@@ -1,17 +1,6 @@
-<html>
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="helloworld.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.29/angular-ui-router.js"></script>
 
-    <script src="helloworld.js"></script>
-    <style>.active { color: red; font-weight: bold }</style>
-  </head>
-  
-  <body ng-app="helloworld">
-    <a ui-sref="hello" ui-sref-active="active">Hello</a>
-    <a ui-sref="about" ui-sref-active="active">About</a>
+    <div ng-controller="MainCtrl">
+
+        <div ng-model="user">{{name}}</div>
     
-    <ui-view></ui-view>
-  </body> 
-</html>
+</div>    
